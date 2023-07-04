@@ -9,7 +9,7 @@ const PostList = () => {
 const [posts, setPosts] = useState({});
 // fetch data from posts service by using axios and run only one time when page refresh by using useEffect
 const fetchPosts = async () => {
-    const response = await axios.get('http://localhost:4000/posts')
+    const response = await axios.get('http://localhost:4002/posts')
     setPosts(response.data)
     console.log(response.data);
 }
@@ -27,8 +27,8 @@ console.log(posts);
         return (
             <div key={index} className='flex flex-col p-2 m-2 gap-10 border border-gray-500 rounded-md max-w-xl' >
                 <div>
-                    {post.title} 
-                    <CommentsList postId={post.id}/>
+                    <div className='text-xl'>{post.title}</div>
+                    <CommentsList comments={ post.comments } />
                     <CommentCreate postId={post.id}/>
                 </div>
             </div>
