@@ -15,11 +15,12 @@ const srvPort = 4005;
 // });
 
 app.post('/events', (req, res) => {
-    const events = req.body;
+    const event = req.body;
     console.log();
-    axios.post('http://localhost:4000/events', events);
-    axios.post('http://localhost:4001/events', events);
-    axios.post('http://localhost:4002/events', events);
+    axios.post('http://localhost:4000/events', event).catch((err) => { console.loog(err.message)});
+    axios.post('http://localhost:4001/events', event).catch((err) => { console.loog(err.message)});
+    axios.post('http://localhost:4002/events', event).catch((err) => { console.loog(err.message)});
+    axios.post('http://localhost:4003/events', event).catch((err) => { console.loog(err.message)});
 
     res.send({ status: 'OK' });
 });
@@ -28,7 +29,6 @@ app.post('/events', (req, res) => {
 app.listen(srvPort, () => {
     console.log("Events service running on port: ", srvPort);
 })
-
 
 
 
