@@ -11,7 +11,8 @@ const posts = {};
 
 // GET posts return all posts and comment
 app.get('/posts', (req, res) => {
-    console.log('return all posts and comment');
+    console.log('return all posts and comment', posts);
+    res.send(posts);
 
 });
 
@@ -25,6 +26,7 @@ app.post('/events', (req, res) => {
         const { id, title } = data;
         posts[id] = { id, title, comments: [] }
     }
+    console.log(posts)
 
     if(type === "CommentCreated"){
         console.log('Request to create comment');
@@ -34,6 +36,8 @@ app.post('/events', (req, res) => {
         console.log(post);
         post.comments.push({ id, content })
     }
+
+    res.status(201).send({ })
 
 });
 

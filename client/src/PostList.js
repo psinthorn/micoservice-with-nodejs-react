@@ -9,7 +9,7 @@ const PostList = () => {
 const [posts, setPosts] = useState({});
 // fetch data from posts service by using axios and run only one time when page refresh by using useEffect
 const fetchPosts = async () => {
-    const response = await axios.get('http://localhost:4000/posts')
+    const response = await axios.get('http://localhost:4002/posts')
     setPosts(response.data)
     console.log(response.data);
 }
