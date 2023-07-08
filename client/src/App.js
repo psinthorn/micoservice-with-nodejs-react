@@ -2,6 +2,7 @@ import React from 'react'
 import PostCreate from './PostCreate'
 import axios from 'axios'
 import PostList from './PostList'
+import '../src/styles/styles.css'
 
 
 const App = () => {

@@ -15,11 +15,12 @@ const srvPort = 4005;
 // });
 
 app.post('/events', (req, res) => {
-    const events = req.body;
+    const event = req.body;
     console.log();
-    axios.post('http://localhost:4000/events', events);
-    axios.post('http://localhost:4001/events', events);
-    axios.post('http://localhost:4002/events', events);
+    axios.post('http://localhost:4000/events', event).catch((err) => { console.loog(err.message)});
+    axios.post('http://localhost:4001/events', event).catch((err) => { console.loog(err.message)});
+    axios.post('http://localhost:4002/events', event).catch((err) => { console.loog(err.message)});
+    axios.post('http://localhost:4003/events', event).catch((err) => { console.loog(err.message)});
 
     res.send({ status: 'OK' });
 });
@@ -34,5 +35,8 @@ app.listen(srvPort, () => {
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8667dc069fe38968c61cfb96be5b673e0ce8ed1a

@@ -48,6 +48,7 @@ app.post('/events', (req, res) => {
 
 // start server and port listening
 app.listen(srvPort, () => {
+    console.log("version: 5");
     console.log("posts server in running on port: ", srvPort);
 })
 

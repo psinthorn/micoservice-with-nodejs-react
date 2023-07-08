@@ -37,7 +37,7 @@ app.post("/posts/:id/comments", async (req, res) => {
     console.log("befor: ", commentByPostId)
 
     // add new comment to to comments object
-    comments.push({ id: commentId, content })
+    comments.push({ id: commentId, content, status: 'pending' })
 
     // add comments back to post
     commentByPostId[postId] = comments
@@ -47,7 +47,8 @@ app.post("/posts/:id/comments", async (req, res) => {
         data: {
             id: commentId,
             content,
-            post_id: postId
+            post_id: postId,
+            status: 'pending', 
         }
     });
     
@@ -68,4 +69,3 @@ app.post('/events', (req, res) => {
 app.listen(srvPort, () => {
     console.log("comments service is running on port: ", srvPort);
 });
-
