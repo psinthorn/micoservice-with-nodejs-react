@@ -30,11 +30,11 @@ app.post('/events', (req, res) => {
 
     if(type === "CommentCreated"){
         console.log('Request to create comment');
-        const { id, content, post_id } = data;
+        const { id, content, post_id, status } = data;
         
         const post = posts[post_id];
         console.log(post);
-        post.comments.push({ id, content })
+        post.comments.push({ id, content, status })
     }
 
     res.status(201).send({ })
