@@ -31,12 +31,3 @@ app.listen(srvPort, () => {
 })
 
 
-
-
-
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8667dc069fe38968c61cfb96be5b673e0ce8ed1a

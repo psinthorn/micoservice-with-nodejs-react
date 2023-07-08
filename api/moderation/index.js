@@ -11,9 +11,6 @@ app.post('/events', (req, res) => {
     console.log("moderation service is running");
 });
 
-
-
-
 app.listen(srvPort, () => {
     console.log("moderation service is running and listen on port: ", srvPort);
 })
